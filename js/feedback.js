@@ -1,4 +1,3 @@
-// feedback.js file
 document.addEventListener('DOMContentLoaded', function() {
     const feedbackForm = document.getElementById('feedbackForm');
     const predictionIdInput = document.getElementById('predictionId');
@@ -56,5 +55,4 @@ document.addEventListener('DOMContentLoaded', function() {
             showMessage("Failed to submit feedback. Check your network.", "error");
         }
     });
-
 });
