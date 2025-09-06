@@ -1,5 +1,5 @@
 // History page functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const token = localStorage.getItem('token');
     if (!token) {
         window.location.href = 'signin.html';
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorState = document.getElementById('errorState');
     const emptyState = document.getElementById('emptyState');
     const historyTable = document.getElementById('historyTable');
-    
+
     const fetchHistory = async () => {
         showLoading();
         try {
@@ -33,35 +33,35 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const formatSuggestions = (suggestions) => {
-    if (!suggestions) return "N/A";
+        if (!suggestions) return "N/A";
 
-    // If already an object
-    if (typeof suggestions === "object") {
-        if (suggestions.remedy) return suggestions.remedy;
-        return Object.values(suggestions).join("; ");
-    }
-
-    // Try parsing once
-    try {
-        const parsed = JSON.parse(suggestions);
-        if (parsed && typeof parsed === "object") {
-            if (parsed.remedy) return parsed.remedy;
-            return Object.values(parsed).join("; ");
+        // If already an object
+        if (typeof suggestions === "object") {
+            if (suggestions.remedy) return suggestions.remedy;
+            return Object.values(suggestions).join("; ");
         }
-    } catch {}
 
-    // 🚨 Handle double-encoded JSON (string inside a string)
-    try {
-        const parsedTwice = JSON.parse(JSON.parse(suggestions));
-        if (parsedTwice && typeof parsedTwice === "object") {
-            if (parsedTwice.remedy) return parsedTwice.remedy;
-            return Object.values(parsedTwice).join("; ");
-        }
-    } catch {}
+        // Try parsing once
+        try {
+            const parsed = JSON.parse(suggestions);
+            if (parsed && typeof parsed === "object") {
+                if (parsed.remedy) return parsed.remedy;
+                return Object.values(parsed).join("; ");
+            }
+        } catch { }
 
-    // If everything fails, return as-is
-    return suggestions;
-};
+        // 🚨 Handle double-encoded JSON (string inside a string)
+        try {
+            const parsedTwice = JSON.parse(JSON.parse(suggestions));
+            if (parsedTwice && typeof parsedTwice === "object") {
+                if (parsedTwice.remedy) return parsedTwice.remedy;
+                return Object.values(parsedTwice).join("; ");
+            }
+        } catch { }
+
+        // If everything fails, return as-is
+        return suggestions;
+    };
 
 
     const populateTable = (predictions) => {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         emptyState.classList.add('hidden');
         errorState.classList.add('hidden');
     };
-    
+
     const hideLoading = () => {
         loadingState.classList.add('hidden');
     };
