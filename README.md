@@ -1,1 +1,1 @@
-# Agro-Med
+# AgroMed
