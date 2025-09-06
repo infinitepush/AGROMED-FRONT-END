@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.getElementById('error-message');
 
     let generatedOtp = '';
-
+    
     // Simulate OTP generation and show OTP input field
     sendOtpBtn.addEventListener('click', () => {
         const phone = phoneInput.value.trim();
@@ -87,4 +87,5 @@ document.addEventListener('DOMContentLoaded', function() {
             errorMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700');
         }
     }
+
 });
