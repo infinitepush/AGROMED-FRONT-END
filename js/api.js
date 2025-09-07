@@ -1,7 +1,7 @@
 // Simple API Service for Agro Med
 class ApiService {
     constructor() {
-        this.baseURL = 'https://agromed-backend-wyux.onrender.com/';
+        this.baseURL = 'https://agromed-backend-wyux.onrender.com';
     }
 
     // AUTHENTICATION
