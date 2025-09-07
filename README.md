@@ -8,6 +8,14 @@
 
 <hr />
 
+## 🌾 About
+
+AGROMED-FRONT-END is the frontend application for the Agromed platform, providing a user interface for features like crop health monitoring, disease detection, and farming management using modern web technologies.
+
+**🔗Link**
+https://agromed-front-end.vercel.app/
+
+
 ## 🚀 Features
 
 - 📸 **Image Upload**  
